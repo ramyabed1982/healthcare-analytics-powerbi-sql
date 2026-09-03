@@ -1,0 +1,23 @@
+procedure_code,procedure_name,procedure_category,default_department_id,base_cost
+P001,Echocardiogram,Diagnostic,1,650.0
+P002,Cardiac catheterization,Interventional,1,8500.0
+P003,Coronary stent placement,Interventional,1,14500.0
+P004,CT scan,Imaging,7,1200.0
+P005,MRI,Imaging,5,2100.0
+P006,Chest X-ray,Imaging,7,320.0
+P007,Appendectomy,Surgery,3,12500.0
+P008,Cholecystectomy,Surgery,3,13800.0
+P009,Hip repair,Orthopedic Surgery,4,18500.0
+P010,Knee replacement,Orthopedic Surgery,4,22000.0
+P011,EEG,Diagnostic,5,900.0
+P012,Thrombolysis,Neurologic Treatment,5,7200.0
+P013,Chemotherapy infusion,Oncology Treatment,6,4800.0
+P014,Radiation treatment,Oncology Treatment,6,6200.0
+P015,Blood transfusion,Supportive Care,2,1800.0
+P016,Upper endoscopy,Diagnostic,2,2600.0
+P017,Colonoscopy,Diagnostic,2,2300.0
+P018,Vaginal delivery,Obstetric,8,7600.0
+P019,Cesarean delivery,Obstetric Surgery,8,14800.0
+P020,Physical therapy session,Rehabilitation,4,300.0
+P021,IV antibiotic therapy,Medical Treatment,2,850.0
+P022,Respiratory therapy,Medical Treatment,2,700.0

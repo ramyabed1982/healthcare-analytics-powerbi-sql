@@ -1,0 +1,9 @@
+department_id,department_name,service_line,capacity_beds,daily_room_rate
+1,Cardiology,Medical,12,1850.0
+2,Internal Medicine,Medical,18,1500.0
+3,Surgery,Surgical,12,2300.0
+4,Orthopedics,Surgical,9,2100.0
+5,Neurology,Medical,8,1950.0
+6,Oncology,Medical,8,2200.0
+7,Emergency Medicine,Emergency,50,1750.0
+8,Women's Health,Medical/Surgical,10,1900.0

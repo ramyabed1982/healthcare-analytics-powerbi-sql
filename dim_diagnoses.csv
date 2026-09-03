@@ -1,0 +1,27 @@
+diagnosis_code,diagnosis_name,diagnosis_category,severity_score
+I10,Essential hypertension,Cardiovascular,1
+I50.9,Heart failure,Cardiovascular,3
+I21.9,Acute myocardial infarction,Cardiovascular,5
+I48.91,Atrial fibrillation,Cardiovascular,2
+E11.9,Type 2 diabetes mellitus,Endocrine,2
+J18.9,Pneumonia,Respiratory,3
+J44.1,COPD with exacerbation,Respiratory,3
+A41.9,Sepsis,Infectious,5
+N39.0,Urinary tract infection,Genitourinary,2
+N17.9,Acute kidney injury,Renal,4
+K35.8,Acute appendicitis,Gastrointestinal,3
+K80.2,Gallstones,Gastrointestinal,2
+S72.0,Hip fracture,Musculoskeletal,4
+M17.9,Knee osteoarthritis,Musculoskeletal,2
+M54.5,Low back pain,Musculoskeletal,1
+G45.9,Transient ischemic attack,Neurologic,3
+I63.9,Ischemic stroke,Neurologic,5
+G40.9,Epilepsy,Neurologic,3
+C34.9,Lung cancer,Oncology,4
+C50.9,Breast cancer,Oncology,4
+D64.9,Anemia,Hematologic,2
+O80,Normal delivery,Obstetric,2
+O14.9,Preeclampsia,Obstetric,4
+R07.9,Chest pain,Symptoms,2
+R10.9,Abdominal pain,Symptoms,2
+R55,Syncope,Symptoms,2

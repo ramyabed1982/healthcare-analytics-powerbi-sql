@@ -1,2 +1,17 @@
-# Healthcare-Analytics-Project
-Healthcare analytics project using SQL and Power BI to analyze patient visits, readmissions, length of stay, costs, and utilization.
+## Dashboard Preview
+
+### Executive Overview
+
+![Executive Overview](screenshots/executive_overview.png)
+
+### Utilization & Capacity
+
+![Utilization Dashboard](screenshots/utilization.png)
+
+### Clinical Outcomes & Cost
+
+![Clinical Outcomes](screenshots/clinical_cost.png)
+
+### Readmissions
+
+![Readmission Dashboard](screenshots/readmissions.png)

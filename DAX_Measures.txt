@@ -1,0 +1,94 @@
+-- Power BI DAX measures
+-- Recommended table names after import:
+-- FactVisits, DimPatients, DimDepartments, DimDate, DimDiagnoses, DimProcedures,
+-- BridgeVisitDiagnoses, BridgeVisitProcedures, FactDailyUtilization
+
+Total Visits =
+COUNTROWS(FactVisits)
+
+Unique Patients =
+DISTINCTCOUNT(FactVisits[patient_id])
+
+Inpatient Visits =
+CALCULATE([Total Visits], FactVisits[visit_type] = "Inpatient")
+
+Emergency Visits =
+CALCULATE([Total Visits], FactVisits[visit_type] = "Emergency")
+
+Outpatient Visits =
+CALCULATE([Total Visits], FactVisits[visit_type] = "Outpatient")
+
+Average Length of Stay =
+CALCULATE(
+    AVERAGE(FactVisits[los_days]),
+    FactVisits[visit_type] = "Inpatient"
+)
+
+Eligible Index Admissions =
+SUM(FactVisits[eligible_readmission_index])
+
+30-Day Readmissions =
+SUM(FactVisits[readmitted_30d])
+
+30-Day Readmission Rate =
+DIVIDE([30-Day Readmissions], [Eligible Index Admissions])
+
+Total Cost =
+SUM(FactVisits[total_cost])
+
+Average Cost per Visit =
+DIVIDE([Total Cost], [Total Visits])
+
+Inpatient Cost =
+CALCULATE([Total Cost], FactVisits[visit_type] = "Inpatient")
+
+Inpatient Days =
+CALCULATE(SUM(FactVisits[los_days]), FactVisits[visit_type] = "Inpatient")
+
+Cost per Inpatient Day =
+DIVIDE([Inpatient Cost], [Inpatient Days])
+
+Bed Utilization Rate =
+DIVIDE(
+    SUM(FactDailyUtilization[occupied_beds]),
+    SUM(FactDailyUtilization[capacity_beds])
+)
+
+Procedure Units =
+SUM(BridgeVisitProcedures[quantity])
+
+Procedure Spend =
+SUM(BridgeVisitProcedures[actual_cost])
+
+Procedure Units per 100 Visits =
+DIVIDE([Procedure Units] * 100, [Total Visits])
+
+Visits Previous Month =
+CALCULATE([Total Visits], DATEADD(DimDate[date], -1, MONTH))
+
+Visits MoM % =
+DIVIDE([Total Visits] - [Visits Previous Month], [Visits Previous Month])
+
+Rolling 3M Visits =
+CALCULATE(
+    [Total Visits],
+    DATESINPERIOD(DimDate[date], MAX(DimDate[date]), -3, MONTH)
+)
+
+Rolling 3M Cost =
+CALCULATE(
+    [Total Cost],
+    DATESINPERIOD(DimDate[date], MAX(DimDate[date]), -3, MONTH)
+)
+
+Readmission Rate Previous Month =
+CALCULATE([30-Day Readmission Rate], DATEADD(DimDate[date], -1, MONTH))
+
+Readmission Rate MoM Change =
+[30-Day Readmission Rate] - [Readmission Rate Previous Month]
+
+Average Cost Previous Month =
+CALCULATE([Average Cost per Visit], DATEADD(DimDate[date], -1, MONTH))
+
+Average Cost MoM % =
+DIVIDE([Average Cost per Visit] - [Average Cost Previous Month], [Average Cost Previous Month])
